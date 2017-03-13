@@ -31,4 +31,9 @@ public class Test {
     public void setQty(int qty) {
         this.qty = qty;
     }
+
+    @Override
+    public String toString() {
+        return "Test "+id+" Row {" +"id=" + id + ", name=" + name + ", qty=" + qty +'}';
+    }
 }

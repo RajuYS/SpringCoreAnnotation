@@ -5,6 +5,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -30,6 +33,17 @@ public class App
 
         TestDAO testDAO= (TestDAO) context.getBean("testDAO");
         System.out.println("Test Name is : "+testDAO.getTestName(1));
+        List<Test> list= testDAO.getAllDetails();
+        Iterator<Test> iterator=list.iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        /*Test t1=new Test();
+        t1.setId("5");
+        t1.setName("Karthik");
+        t1.setQty(20);
+
+        testDAO.save(t1);*/
 
     }
 }

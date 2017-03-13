@@ -26,7 +26,7 @@ public class DbPropertiesConfig {
     @Value("${dbo.password}")
     private String password;
 
-    @Bean(name = "db")
+    @Bean(name = "dbProperties")
     public DbProperties getDProperties(){
         DbProperties dbProperties=new DbProperties();
         dbProperties.setUrl(url);

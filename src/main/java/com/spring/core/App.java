@@ -25,9 +25,11 @@ public class App
         System.out.println("From Education Class2"+ed2);*/
 
         ApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
-        DbProperties db = (DbProperties) context.getBean("db");
+        DbProperties db = (DbProperties) context.getBean("dbProperties");
         System.out.println(db.toString());
 
+        TestDAO testDAO= (TestDAO) context.getBean("testDAO");
+        System.out.println("Test Name is : "+testDAO.getTestName(1));
 
     }
 }

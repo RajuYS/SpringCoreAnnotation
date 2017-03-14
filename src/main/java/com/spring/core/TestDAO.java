@@ -9,4 +9,7 @@ public interface TestDAO {
     public String getTestName(int id);
     public List<Test> getAllDetails();
     public void save(Test test);
+    public void update();
+    public void delete(String id);
+    public String spCall(String id);
 }

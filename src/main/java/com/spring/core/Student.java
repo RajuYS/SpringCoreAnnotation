@@ -18,7 +18,6 @@ public class Student {
     public void setB(B b) {
         this.b = b;
     }
-
     public String getName() {
         return name;
     }

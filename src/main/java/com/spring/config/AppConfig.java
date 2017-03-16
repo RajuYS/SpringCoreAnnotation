@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
  * Created by RajuY on 2/26/2017.
  */
 @Configuration
-@Import({StudentConfig.class,EducationConfig.class})
+@Import({StudentConfig.class})
 public class AppConfig {
 
 }

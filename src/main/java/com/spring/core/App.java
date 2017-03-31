@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class App
 {
-    static Log log= LogFactory.getLog(App.class.getName());
+    private static Log log= LogFactory.getLog(App.class.getName());
     public static void main( String[] args )
     {
         /*ApplicationContext context1=new ClassPathXmlApplicationContext("AppConfig.class");
@@ -30,12 +30,13 @@ public class App
         System.out.println("From Education Class2"+ed2);*/
         //log.info("Start the execution");
         ApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
+        log.debug("application context:"+context);
         DbProperties db = (DbProperties) context.getBean("dbProperties");
         System.out.println(db.toString());
-
+        log.debug("Database properties:"+db.toString());
         TestDAO testDAO= (TestDAO) context.getBean("testDAO");
         System.out.println("Test Name is : "+testDAO.getTestName(1));
-
+        log.debug("Test Name is : "+testDAO.getTestName(1));
         Test t1=new Test();
         t1.setId("5");
         t1.setName("Karthik");
@@ -52,7 +53,7 @@ public class App
             System.out.println(iterator.next());
         }
         System.out.println("From stored procedure call"+testDAO.spCall("3"));
-        //log.info("End the execution");
+        log.info("End the execution");
 
     }
 }

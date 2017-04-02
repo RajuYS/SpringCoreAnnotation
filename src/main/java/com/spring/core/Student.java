@@ -7,20 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class Student {
     private String name;
-<<<<<<< HEAD
-    @Autowired
-    private B b;
 
-    public B getB() {
-        return b;
-    }
-
-    public void setB(B b) {
-        this.b = b;
-    }
-=======
-
->>>>>>> origin/strt
     public String getName() {
         return name;
     }
